@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: shopping-bazar
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: shopping-bazar
+
+  template:
+    metadata:
+      labels:
+        app: shopping-bazar
+
+    spec:
+      containers:
+        - name: shopping-bazar
+          image: shopping-bazar-backend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
