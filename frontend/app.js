@@ -1,4 +1,4 @@
-const API = "http://localhost:5000";
+const API = window.location.origin;;
 
 const user = JSON.parse(localStorage.getItem("shoppingBazarUser"));
 const token = localStorage.getItem("shoppingBazarToken");

@@ -1,4 +1,4 @@
-const API = "http://localhost:5000";
+const API = window.location.origin;
 
 const form = document.querySelector("form");
 const message = document.querySelector("#message");
