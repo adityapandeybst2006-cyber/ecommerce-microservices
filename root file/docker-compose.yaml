@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: .
+    ports:
+      - "4000:4000"
+    depends_on:
+      - auth-service
+      - product-service
+      - cart-service
+      - order-service
+      - payment-service
+
+  auth-service:
+    build: .
+    command: node microservices/auth-service/index.js
+
+  product-service:
+    build: .
+    command: node microservices/product-service/index.js
+
+  cart-service:
+    build: .
+    command: node microservices/cart-service/index.js
+
+  order-service:
+    build: .
+    command: node microservices/order-service/index.js
+
+  payment-service:
+    build: .
+    command: node microservices/payment-service/index.js

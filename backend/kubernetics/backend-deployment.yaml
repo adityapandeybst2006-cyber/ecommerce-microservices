@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecommerce-microservices
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ecommerce
+  template:
+    metadata:
+      labels:
+        app: ecommerce
+    spec:
+      containers:
+      - name: ecommerce
+        image: your-docker-image-name:latest   # ← apna Docker image naam daalo
+        ports:
+        - containerPort: 4000
+        env:
+        - name: MONGO_URI
+          value: "mongodb://mongodb:27017/shoppingbazar"

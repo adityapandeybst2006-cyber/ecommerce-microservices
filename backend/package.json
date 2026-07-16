@@ -4,11 +4,12 @@
   "description": "Backend for Shopping Bazar",
   "main": "server.js",
   "scripts": {
-    "seed": "node seed/seedProducts.js",
-    "backend": "nodemon server.js",
-    "frontend": "npx browser-sync start --server '../frontend' --files '../frontend/**/*'",
-    "start": "concurrently \"npm run backend\" \"npm run frontend\""
-  },
+  "seed": "node seed/seedProducts.js",
+  "backend": "nodemon server.js",
+  "frontend": "npx browser-sync start --server ../frontend --files ../frontend/**/*",
+  "start": "concurrently \"npm run backend\" \"npm run frontend\""
+}
+  ,
   "author": "Aditya",
   "license": "ISC",
   "dependencies": {
